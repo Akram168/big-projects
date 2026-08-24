@@ -1,0 +1,31 @@
+{
+  "channel_name": "The Hidden Archive",
+  "tagline": "Real cases. Zero answers.",
+  "language": "en",
+  "voice_id": "nPczCjzI2devNBz1zQrb",
+  "voice_settings": {
+    "stability": 0.45,
+    "similarity_boost": 0.78,
+    "style": 0.15,
+    "use_speaker_boost": true
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "script_model": "claude-opus-4-7",
+  "resolution": [1080, 1920],
+  "fps": 25,
+  "caption_style": {
+    "fontname": "Anton",
+    "fontsize": 16,
+    "primary_colour": "&H00FFFFFF",
+    "outline_colour": "&H00000000",
+    "outline": 3,
+    "shadow": 1,
+    "alignment": 2,
+    "margin_v": 280,
+    "words_per_chunk": 3
+  },
+  "overlay_font": "/System/Library/Fonts/Supplemental/Impact.ttf",
+  "color_grade": "eq=contrast=1.12:saturation=0.82:gamma=0.95",
+  "film_noise": "noise=alls=8:allf=t",
+  "background_music_db": -22
+}

@@ -1,0 +1,47 @@
+{
+  "title": "The Men in Lead Masks",
+  "scenes": [
+    {
+      "id": 1,
+      "narration": "Two men. Dead on a hill. Wearing identical lead masks over their eyes.",
+      "duration_seconds": 4,
+      "broll_keywords": "foggy hill silhouette",
+      "on_screen_text": "WHY THE MASKS?"
+    },
+    {
+      "id": 2,
+      "narration": "August 20th, 1966. Vintem Hill, Rio de Janeiro. A boy flying a kite finds the bodies of two electronic technicians. Their names: Manoel Pereira da Cruz and Miguel Jos\u00e9 Viana. They had vanished three days earlier after withdrawing a large sum of cash.",
+      "duration_seconds": 11,
+      "broll_keywords": "brazil hillside jungle",
+      "on_screen_text": "AUGUST 1966"
+    },
+    {
+      "id": 3,
+      "narration": "Both men lay side by side in formal suits. No signs of struggle. No external injuries. Beside them, an empty water bottle, a packet wrapped in foil, and a small notebook. Each man wore handmade lead eye masks. The kind used to shield against radiation.",
+      "duration_seconds": 13,
+      "broll_keywords": "lead metal mask",
+      "on_screen_text": "LEAD MASKS"
+    },
+    {
+      "id": 4,
+      "narration": "The notebook contained a chilling instruction. Quote: \"16:30 be at the agreed place. 18:30 swallow capsules, after effect protect metals await signal mask.\" Witnesses reported strange lights hovering over the hill that night. Toxicology results were lost. The bodies, too decomposed for proper autopsy. No cause of death was ever determined.",
+      "duration_seconds": 16,
+      "broll_keywords": "old handwritten notebook",
+      "on_screen_text": "NO CAUSE OF DEATH"
+    },
+    {
+      "id": 5,
+      "narration": "Theories range from occult ritual, to spiritist contact experiments, to alien encounter. Nearly 60 years later, no suspects. No motive. No answers. The capsules were never identified. The signal they waited for, never named.",
+      "duration_seconds": 11,
+      "broll_keywords": "candle flickering dark",
+      "on_screen_text": "STILL UNSOLVED"
+    },
+    {
+      "id": 6,
+      "narration": "Real cases. Zero answers. The Hidden Archive.",
+      "duration_seconds": 4,
+      "broll_keywords": "dark archive files",
+      "on_screen_text": "THE HIDDEN ARCHIVE"
+    }
+  ]
+}
