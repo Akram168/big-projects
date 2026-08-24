@@ -9,3 +9,7 @@ Larger, full-scope projects.
 - **[url-shortener](./url-shortener)** — URL shortener REST API with input validation, collision-checked short codes, and hit tracking.
 - **[network-connection-analyzer](./network-connection-analyzer)** — cross-platform tool that reads live OS connection state and flags exposed listeners and suspicious connection patterns, no elevated privileges needed.
 - **[encrypted-notes-cli](./encrypted-notes-cli)** — notes app encrypted at rest with a passphrase-derived key (PBKDF2 + Fernet/AES), built on audited crypto rather than hand-rolled ciphers.
+- **[windows-event-log-analyzer](./windows-event-log-analyzer)** — reads real Windows Security event logs and flags failed-logon bursts, brute-force-prone logon types, and account lockouts.
+- **[firewall-rule-auditor](./firewall-rule-auditor)** — audits real local Windows Firewall rules, tiered by actual risk (system-wide exposure vs. app-scoped) to cut noise on a normal desktop.
+- **[ioc-threat-intel-checker](./ioc-threat-intel-checker)** — classifies and looks up IOCs (IP/domain/hash) against a local feed, with a clean seam for plugging in a real threat-intel API.
+- **[soc-alert-triage-dashboard](./soc-alert-triage-dashboard)** — web dashboard that ranks mock SIEM alerts by a severity × asset-criticality × confidence priority score.

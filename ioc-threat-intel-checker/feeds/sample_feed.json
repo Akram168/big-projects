@@ -1,0 +1,15 @@
+{
+  "_comment": "Illustrative sample feed for demo purposes. IPs are from RFC 5737 documentation ranges (192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24) -- reserved for examples, never real/routable. The hash is the EICAR test file's published MD5, a standard harmless string used specifically to test antivirus/security tooling, not real malware.",
+  "ips": {
+    "192.0.2.55": {"source": "sample-feed", "notes": "Example: known C2 server (documentation IP, not real)"},
+    "198.51.100.23": {"source": "sample-feed", "notes": "Example: Tor exit node used in a prior incident (documentation IP, not real)"},
+    "203.0.113.7": {"source": "sample-feed", "notes": "Example: scanning source seen in honeypot logs (documentation IP, not real)"}
+  },
+  "domains": {
+    "malicious-example.test": {"source": "sample-feed", "notes": "Example phishing domain (reserved .test TLD, not a real registrable domain)"},
+    "evil-c2.example": {"source": "sample-feed", "notes": "Example C2 domain (reserved .example TLD, not real)"}
+  },
+  "hashes": {
+    "44d88612fea8a8f36de82e1278abb02f": {"source": "sample-feed", "notes": "EICAR standard antivirus test file (MD5) -- intentionally harmless, used to test detection tooling"}
+  }
+}
