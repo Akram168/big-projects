@@ -4,7 +4,7 @@ Hidden Archive - Faceless Video Pipeline
 =========================================
 
 Generates a complete vertical short (1080x1920) end-to-end:
-  1. Claude writes the scene-by-scene JSON script
+  1. LLM writes the scene-by-scene JSON script
   2. ElevenLabs generates Brian-voice narration per scene
   3. Pexels supplies vertical b-roll per scene
   4. ffmpeg composites with Ken Burns zoom, burned captions,
@@ -17,7 +17,7 @@ Example:
   python pipeline.py lead_masks_1966 "The Lead Masks Case, Brazil 1966 - two electronic technicians found dead on Vintem Hill wearing lead masks"
 
 Required env vars (put in .env or export):
-  ANTHROPIC_API_KEY
+  SCRIPT_API_KEY
   ELEVENLABS_API_KEY
   PEXELS_API_KEY
 """
@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 import requests
-from anthropic import Anthropic
+from anthropic import Anthropic as _ScriptClient
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -106,7 +106,7 @@ Hard rules:
 
 
 def generate_script(topic, brand):
-    client = Anthropic()
+    client = _ScriptClient(api_key=os.environ["SCRIPT_API_KEY"])
     system = SYSTEM_PROMPT.format(
         channel_name=brand["channel_name"],
         tagline=brand["tagline"],
@@ -118,7 +118,7 @@ def generate_script(topic, brand):
         messages=[{"role": "user", "content": f"Write the script for this case: {topic}"}],
     )
     text = "".join(b.text for b in msg.content if b.type == "text").strip()
-    # strip code fences if Claude added any
+    # strip code fences if the model added any
     if text.startswith("```"):
         text = re.sub(r"^```(?:json)?\s*", "", text)
         text = re.sub(r"\s*```$", "", text)
@@ -336,7 +336,7 @@ def main():
     parser.add_argument("topic", help="topic prompt for the script writer")
     args = parser.parse_args()
 
-    for var in ("ANTHROPIC_API_KEY", "ELEVENLABS_API_KEY", "PEXELS_API_KEY"):
+    for var in ("SCRIPT_API_KEY", "ELEVENLABS_API_KEY", "PEXELS_API_KEY"):
         if not os.environ.get(var):
             print(f"Missing env var: {var}", file=sys.stderr)
             sys.exit(1)

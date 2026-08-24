@@ -7,7 +7,7 @@ End-to-end faceless YouTube Shorts / TikTok video generator for the Hidden Archi
 ```
 "The Lead Masks Case Brazil 1966"
               ↓
-        Claude (script)         ← writes 6-scene JSON
+         LLM (script)           ← writes 6-scene JSON
               ↓
        ElevenLabs (Brian)       ← narrates each scene
               ↓
@@ -32,7 +32,7 @@ ffmpeg -version    # should print version info
 # 3. Get API keys
 #    ElevenLabs:  https://elevenlabs.io/app/settings/api-keys
 #    Pexels:      https://www.pexels.com/api/  (free)
-#    Anthropic:   https://console.anthropic.com/settings/keys
+#    Script LLM:  provider console of your choice
 
 # 4. Set up env
 cp .env.example .env
@@ -48,7 +48,7 @@ python pipeline.py lead_masks_1966 "The Lead Masks Case, Brazil 1966 - two elect
 Output ends up at `cases/lead_masks_1966/final.mp4`.
 
 The script also drops:
-- `script.json` — the scene-by-scene JSON Claude wrote (edit and re-run scenes if you want)
+- `script.json` — the scene-by-scene JSON the LLM wrote (edit and re-run scenes if you want)
 - `audio/scene_NN.mp3` — narration per scene
 - `visuals/scene_NN_raw.mp4` — raw Pexels b-roll
 - `visuals/scene_NN_final.mp4` — composed scene clips
@@ -93,7 +93,7 @@ The `subtitles` filter handles RTL automatically; you may want to bump `fontsize
 
 | Step | Cost |
 |---|---|
-| Claude script (~1500 tokens) | ~$0.02 |
+| LLM script (~1500 tokens) | ~$0.02 |
 | ElevenLabs narration (~800 chars) | ~$0.12 |
 | Pexels b-roll | $0.00 |
 | **Total** | **~$0.14** |
@@ -103,5 +103,5 @@ The `subtitles` filter handles RTL automatically; you may want to bump `fontsize
 1. **`--from-script` flag** to re-run downstream without regenerating script (5 min add)
 2. **Music bed mixer** with ducking under narration (15 min add)
 3. **Batch mode**: feed a CSV of topics, output a folder of MP4s overnight
-4. **Auto-thumbnail**: Claude picks the most dramatic frame + overlays case title in VT323
+4. **Auto-thumbnail**: LLM picks the most dramatic frame + overlays case title in VT323
 5. **YouTube/TikTok upload via API** (the last manual step you'd still be doing)
